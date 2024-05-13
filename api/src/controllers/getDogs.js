@@ -25,26 +25,29 @@ const getDogs = async () => {
 
         const DB_breeds = await Dog.findAll ({
             include: {
-                model: Temperament}})
+                model: Temperament, as:"temperament"}})
         
         const DB_dog = DB_breeds.map((dog) => {
-            const breedTempDB = Dog.Temperament.map(temp => temp.name);
+            const breedTempDB = dog.temperament.map(temp => temp.name);
             return {
                 id: dog.id,
                 name: dog.name,
                 weight: dog.weight,
                 height: dog.height,
                 life_span: dog.life_span,
-                temperament: dog.tetmperamen,
+                temperament: breedTempDB.join(", "),
                 image: dog.image,
                 created: true,
-                temperament: breedTempDB.join(", ")
             }
         })
-        
+        console.log(...DB_dog, ...apiBreeds)
         return[...DB_dog, ...apiBreeds];
     } catch (error) {
         console.error("Error al obtener datos de The Dog API:", error);
     }
 }
 getDogs();
+
+module.exports = {
+    getDogs
+}

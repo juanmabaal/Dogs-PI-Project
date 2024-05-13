@@ -40,7 +40,6 @@ const getDogs = async () => {
                 created: true,
             }
         })
-        console.log(...DB_dog, ...apiBreeds)
         return[...DB_dog, ...apiBreeds];
     } catch (error) {
         console.error("Error al obtener datos de The Dog API:", error);

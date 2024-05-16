@@ -9,6 +9,9 @@ const getTemperamentDogApi = async() => {
 
     try {
         const { data } = await axios.get(URL);
+
+        if (!data) throw new Error("No se recibieron datos desde la API.");
+
         const temperamentDogApi = data?.map((dog) => dog?.temperament);
         
         let allTemps = temperamentDogApi.toString().split(",");
@@ -19,7 +22,9 @@ const getTemperamentDogApi = async() => {
             return allTemps.indexOf(temp) === index;
         }) //Si el índice de un temperamento es igual al índice de su primera aparición en el array, significa que es único y se conserva en el array tempsFiltered
 
-        
+        if (tempsFiltered.length === 0) throw new Error("No se encontraron temperamentos válidos.");
+
+
         const temperamentObject = tempsFiltered.map((temp) => { //Se convierten los temperamentos en un objeto y luego pasarlos al modelo
             return {
                 name: temp
@@ -33,7 +38,8 @@ const getTemperamentDogApi = async() => {
         return temperamentObject;
 
     } catch (error) {
-        console.error("Error al obtener datos de temperamentos de los perros:", error);
+        // console.error("Error al obtener datos de temperamentos de los perros:", error);
+        throw new Error(error.message); // Re-lanzar el error para que pueda ser manejado externamente si es necesario
     }
 }
 

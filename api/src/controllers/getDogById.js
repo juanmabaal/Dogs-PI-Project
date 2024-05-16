@@ -1,24 +1,31 @@
 
 const { getDogs } = require('./getDogs');
 
-const { Dog, Temperament } = require('../db');
 
 const getDogById =  async (breedId) => {
     try {
         const allDogs = await getDogs();
         
         const dogById = allDogs.find((dog) => dog.id === breedId);
-        console.log(dogById);
+
+        // Verificar si se encontró el perro con el ID proporcionado
+        if (!dogById) {
+            throw new Error(`No se encontró un perro con el ID ${breedId}.`);
+        }
+
+        console.log(dogById); // Loguear el perro encontrado para depuración
+
         return dogById;
     } catch (error) {
-        console.error("Error al obtener el perro por el ID", error)
+        // console.error("Error al obtener el perro por el ID", error)
+        throw new Error(error.message);
     }
 
 }
 
 // getDogById(259); //Esto deberia retornar la raza de perro con un id especifico
 
+
 module.exports = {
     getDogById
 };
-

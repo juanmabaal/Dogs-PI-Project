@@ -10,6 +10,11 @@ const getDogs = async () => {
     try {
         const { data } = await axios(URL);
 
+        //Comprobar si la API devolvió datos, si no, lanzar error
+        if (!data || data.length === 0) {
+            throw new Error("No se encontraron perros en la API.");
+        }
+
         const apiBreeds = data?.map((dog) => {
             return {
                 id: dog?.id,
@@ -27,6 +32,11 @@ const getDogs = async () => {
             include: {
                 model: Temperament, as:"temperament"}})
         
+        // Comprobar si la base de datos devolvió datos, si no, lanzar error
+        if (!DB_breeds || DB_breeds.length === 0) {
+            throw new Error("No se encontraron perros en la base de datos.");
+        }
+
         const DB_dog = DB_breeds.map((dog) => {
             const breedTempDB = dog.temperament.map(temp => temp.name);
             return {
@@ -42,10 +52,11 @@ const getDogs = async () => {
         })
         return[...DB_dog, ...apiBreeds];
     } catch (error) {
-        console.error("Error al obtener datos de The Dog API:", error);
+        // console.error("Error al obtener datos de The Dog API:", error);
+        throw new Error(error.message); 
     }
 }
-getDogs();
+
 
 module.exports = {
     getDogs

@@ -33,7 +33,7 @@ const getDogs = async () => {
                 model: Temperament, as:"temperament"}})
         
         // Comprobar si la base de datos devolvió datos, si no, lanzar error
-        if (!DB_breeds || DB_breeds.length === 0) {
+        if (!DB_breeds && DB_breeds.length === 0) {
             throw new Error("No se encontraron perros en la base de datos.");
         }
 
@@ -50,13 +50,14 @@ const getDogs = async () => {
                 created: true,
             }
         })
+        // console.log(...DB_dog, ...apiBreeds)
         return[...DB_dog, ...apiBreeds];
     } catch (error) {
         // console.error("Error al obtener datos de The Dog API:", error);
         throw new Error(error.message); 
     }
 }
-
+getDogs();
 
 module.exports = {
     getDogs

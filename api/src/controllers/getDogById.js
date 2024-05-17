@@ -6,7 +6,7 @@ const getDogById =  async (breedId) => {
     try {
         const allDogs = await getDogs();
         
-        const dogById = allDogs.find((dog) => dog.id === breedId);
+        const dogById = allDogs.find((dog) => dog.id === parseInt(breedId, 10));
 
         // Verificar si se encontró el perro con el ID proporcionado
         if (!dogById) {
@@ -23,7 +23,7 @@ const getDogById =  async (breedId) => {
 
 }
 
-// getDogById(259); //Esto deberia retornar la raza de perro con un id especifico
+// getDogById(222); //Esto deberia retornar la raza de perro con un id especifico
 
 
 module.exports = {

@@ -4,6 +4,7 @@ const { Router } = require('express');
 
 const { dogsHandler } = require('../handlers/dogsHandler'); 
 const { dogByIdHandler } = require('../handlers/dogByIdHandler');
+const { dogsByNameHandler } = require('../handlers/dogsByNameHandler');
 
 const router = Router();
 
@@ -11,5 +12,6 @@ const router = Router();
 // Ejemplo: router.use('/auth', authRouter);
 router.get('/dogs', dogsHandler);
 router.get('/dogs/:breedId', dogByIdHandler);
+router.get('/name', dogsByNameHandler);
 
 module.exports = router;

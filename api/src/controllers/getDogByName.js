@@ -1,7 +1,7 @@
 
 const { getDogs } = require('./getDogs');
 
-const getDogByName =  async (bredName) => {
+const getDogsByName =  async (bredName) => {
     try {
         const allDogs = await getDogs();
         
@@ -12,7 +12,7 @@ const getDogByName =  async (bredName) => {
             throw new Error(`No se encontraron perros con el nombre que incluya '${bredName}'.`);
         };
 
-        console.log(dogByName);
+        // console.log(dogByName);
         return dogByName;
     } catch (error) {
         // Loguear y lanzar el error para que pueda ser manejado por un middleware de errores
@@ -25,5 +25,5 @@ const getDogByName =  async (bredName) => {
  //getDogByName('Wirehaired Vizsla'); //Esto deberia retornar la raza de perro con un nombre especifico
 
 module.exports = {
-    getDogByName
+    getDogsByName
 };

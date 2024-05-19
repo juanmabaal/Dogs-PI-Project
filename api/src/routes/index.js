@@ -5,6 +5,7 @@ const { Router } = require('express');
 const { dogsHandler } = require('../handlers/dogsHandler'); 
 const { dogByIdHandler } = require('../handlers/dogByIdHandler');
 const { dogsByNameHandler } = require('../handlers/dogsByNameHandler');
+const { getTemperamentsHandler } = require('../handlers/getTemperamentsHandler');
 
 const router = Router();
 
@@ -13,5 +14,6 @@ const router = Router();
 router.get('/dogs', dogsHandler);
 router.get('/dogs/:breedId', dogByIdHandler);
 router.get('/name', dogsByNameHandler);
+router.get('/temperaments', getTemperamentsHandler);
 
 module.exports = router;

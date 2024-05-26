@@ -11,10 +11,11 @@ import {
 } from './actions-type';
 
 export const getDogs = () => {
-    const endpoint = 'http://localhost:3001/dogs';
+    const endpoint = `http://localhost:3001/dogs`;
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
+           
             return dispatch ({
                 type: GET_DOGS,
                 payload: data

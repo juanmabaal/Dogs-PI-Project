@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Poppins', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+.landingContainer {
+  text-align: center;
+  background-color: #89cff0; /* Azul Claro */
+  color: #333333; /* Gris Oscuro */
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.header {
+  padding: 20px;
+  background-color: #ffd700; /* Amarillo */
+  border-bottom: 5px solid #98fb98; /* Verde Claro */
+  z-index: 1; /* Asegura que el header esté sobre la imagen */
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+.header p {
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./perrosJugando.png'); /* Ruta a tu imagen en la carpeta public */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  overflow: hidden; /* Asegura que no haya desbordamiento */
+  
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Capa de superposición para mejorar la legibilidad */
+  z-index: 0;
+}
+
+.content {
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté sobre la superposición */
+}
+
+.exploreButton {
+  padding: 25px 45px;
+  font-size: 22px;
+  color: #333333;
+  background-color: #ffb6c1; /* Rosa Pastel */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  animation: pulse 2s infinite; /* Añade la animación de pulso */
+  box-shadow: 0 0 15px rgba(152, 251, 152, 0.4); /* Sombra inicial */
+}
+
+.exploreButton:hover {
+  background-color: #ff69b4; /* Rosa más oscuro */
+}
+
+.footer {
+    padding: 10px;
+    background-color: #ffd700; /* Amarillo */
+    z-index: 1; /* Asegura que el footer esté sobre la imagen */
+    width: 100%;
+    margin-top: auto;
+  }
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer a {
+  color: #333333; /* Gris Oscuro para el enlace */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Animación de pulso para el boton*/
+@keyframes pulse {
+    0% {
+      box-shadow: 0 0 5px rgba(152, 251, 152, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(152, 251, 152, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(152, 251, 152, 0.4);
+    }
+  }
+
+/* Media Queries */
+@media (min-width: 1201px) {
+    .header h1 {
+      font-size: 3em;
+    }
+  
+    .header p {
+      font-size: 1.5em;
+    }
+  
+    .main {
+      background-position: center -220px; /* Ajusta la posición de la imagen de fondo hacia abajo en pantallas grandes */
+    }
+  
+    .exploreButton {
+      padding: 20px 40px;
+      font-size: 24px;
+      margin-top: 200px;
+    }
+    .footer {
+        padding: 5px 0; /* Hace que el footer sea más delgado en pantallas grandes */
+        margin-bottom: 5px; /* Baja el footer */
+      }
+  
+    .footer p, .footer a {
+      font-size: 1em;
+    }
+  }
+@media (max-width: 1200px) {
+  .header h1 {
+    font-size: 2em;
+  }
+
+  .header p {
+    font-size: 1em;
+  }
+  
+  .exploreButton {
+    padding: 18px 25px;
+    font-size: 20px;
+  }
+  .footer {
+    padding: 3px 0; /* Hace que el footer sea más delgado en pantallas grandes */
+    margin-bottom: 5px; /* Baja el footer */
+  }
+
+.footer p, .footer a {
+    font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 1.8em;
+  }
+
+  .header p {
+    font-size: 0.9em;
+  }
+
+  .exploreButton {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 1.5em;
+  }
+
+  .header p {
+    font-size: 0.8em;
+  }
+
+  .exploreButton {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .footer p {
+    font-size: 0.8em;
+  }
+}

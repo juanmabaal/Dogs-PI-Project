@@ -57,7 +57,7 @@ const getDogs = async () => {
         throw new Error(error.message); 
     }
 }
-getDogs();
+// getDogs();
 
 module.exports = {
     getDogs

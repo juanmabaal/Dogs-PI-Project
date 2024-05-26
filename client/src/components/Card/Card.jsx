@@ -1,9 +1,20 @@
 
-const Card = () => {
+const Card = ({id, name, weight, height, life_span, temperament, image}) => {
     return(
         <div>
-            <h2>Card Component</h2>
-
+            <div>
+                <h3>Name: {name}</h3>
+            </div>
+            <div>
+                <img src={image}/>
+            </div>
+            <div>
+                <p>Weight: {weight}</p>
+                <p>Temperaments: {temperament}</p>
+            </div>
+            <div>
+                <img/>
+            </div> 
         </div>
     );
 };

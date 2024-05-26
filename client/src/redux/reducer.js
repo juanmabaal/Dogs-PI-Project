@@ -24,41 +24,47 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 dogs: action.payload,
                 dogsCopy: action.payload
-            }
+            };
         
-        case GET_DOG_BY_NAME: 
-        return {
-            ...state,
-            dogsCopy: action.payload
-        }
+        case GET_DOG_BY_NAME:
+            return {
+                ...state,
+                dogsCopy: action.payload
+            };
 
-        case GET_TEMPERAMENTS: 
-        return {
-            ...state,
-            temperaments: action.payload,
-            temperamentsCopy: action.payload
-        }
+        case GET_TEMPERAMENTS:
+            return {
+                ...state,
+                temperaments: action.payload,
+                temperamentsCopy: action.payload
+            };
 
-        case TEMP_ALL_NAMES: 
-        return {
-            ...state,
-            dogsCopy: [...state.dogs].filter((dog) => dog.temperament?.includes(action.payload))
-        }
+        case TEMP_ALL_NAMES:
+            return {
+                ...state,
+                dogsCopy: [...state.dogs].filter((dog) => dog.temperament?.includes(action.payload))
+            };
 
-        //Aquivan los otros casos
+        case NAME_BY_ORIGIN: {
+            const dogByOrigin = (action.payload === 'api')
+                ? [...state.dogs].filter((dog) => dog.created === false)
+                : [...state.dogs].filter((dog) => dog.created === true);
+            return {
+                ...state,
+                dogsCopy: dogByOrigin
+            };
+        }
+        //Aqui van los dos casos faltantes para el filtrado
 
         case POST_DOG:
             return {
                 ...state,
-                dogs: [ ...state.dogs, action.payload], //Se añade el nuevo perro a la copia original
-                dogsCopy: [state.dogsCopy, action.payload]
-            }
+                dogs: [...state.dogs, action.payload], // Se añade el nuevo perro a la copia original
+                dogsCopy: [...state.dogsCopy, action.payload]
+            };
 
         default:
-            return {
-                ...state
-            }
-
+            return state;
     }
 };
 

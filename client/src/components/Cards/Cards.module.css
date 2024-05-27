@@ -1,0 +1,38 @@
+.cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Ajustamos el gap para un espacio uniforme entre tarjetas */
+  }
+  
+  .cardWrapper {
+    flex: 1 1 calc(33.333% - 40px); /* Ajusta el ancho para tener 3 tarjetas por fila */
+    box-sizing: border-box;
+    max-width: calc(33.333% - 40px); /* Ajusta el ancho máximo */
+    text-align: center;
+    transition: transform 0.3s;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cardWrapper:hover {
+    transform: scale(1.05);
+  }
+
+  
+  @media (max-width: 1200px) {
+    .cardWrapper {
+      flex: 1 1 calc(50% - 40px); /* 2 tarjetas por fila en pantallas medianas */
+      max-width: calc(50% - 40px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .cardWrapper {
+      flex: 1 1 calc(100% - 40px); /* 1 tarjeta por fila en pantallas pequeñas */
+      max-width: calc(100% - 40px);
+    }
+  }
+  

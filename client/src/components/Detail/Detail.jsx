@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom";
 import axios from "axios";
 import style from './Detail.module.css';
+import LoadingSpinner from '../Loading/LoadingSpinner';
 
 const Detail = () => {
     const { idBreed } = useParams();
@@ -15,7 +16,11 @@ const Detail = () => {
         const fetchDog = async () => {
             try {
                 setLoading(true);
-                const { data } = await axios.get(`http://localhost:3001/dogs/${idBreed}`);
+                // Hacer la solicitud y el retraso de 2 segundos en paralelo
+                const [data] = await Promise.all([
+                    axios.get(`http://localhost:3001/dogs/${idBreed}`).then(response => response.data),
+                    new Promise(resolve => setTimeout(resolve, 2000))
+                ]);
                 // console.log(data); //debe traer el perro por id en la consola
                 setDogDetail(data);
             } catch (error) {
@@ -32,7 +37,7 @@ const Detail = () => {
     }, [idBreed]);
 
     if (loading) {
-        return <div>Cargando...</div>;
+        return <LoadingSpinner/>
     }
 
     if (error) {

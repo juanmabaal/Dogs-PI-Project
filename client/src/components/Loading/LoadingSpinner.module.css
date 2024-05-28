@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('./loadingDogs.png'); /* Ruta a tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+  filter: blur(2px); /* Aplica un desenfoque a la imagen de fondo */
+  position: relative;
+}
+
+.spinnerContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Capa oscura para mejor visibilidad del spinner */
+  z-index: 1;
+}
+
+.spinner {
+  border: 8px solid #ffd700; 
+  border-top: 8px solid #333333; 
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+  z-index: 2; /* Asegura que el spinner esté por encima de la capa oscura */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Media Queries */
+@media (min-width: 1201px) {
+  .spinner {
+    width: 80px;
+    height: 80px;
+    border-width: 10px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border-width: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border-width: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .spinner {
+    width: 40px;
+    height: 40px;
+    border-width: 5px;
+  }
+}

@@ -30,10 +30,12 @@
 }
 
 .detailP {
-  font-size: 1em;
+    font-size: 1em;
   font-weight: 400;
-  color: #333333; /* Gris Oscuro */
-  margin: 10px 0;
+  color: #333333; 
+  margin: 10px auto;
+  text-align: center; 
+  width: 60%; 
 }
 
 .detailP span {
@@ -41,18 +43,21 @@
     font-weight: 700;
   }
 
-button {
+.detailButton {
+  margin-top: 12px;
   padding: 10px 20px;
-  font-size: 1em;
+  font-size: 1.1em;
   color: #333333;
   background-color: #ffb6c1; /* Rosa Pastel */
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+  animation: pulse 2s infinite; /* Añade la animación de pulso */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
-button:hover {
+.detailButton:hover {
   background-color: #ff69b4; /* Rosa más oscuro */
 }
 
@@ -80,7 +85,7 @@ button:hover {
     font-weight: 700;
   }
 
-  button {
+  .detailButton {
     padding: 8px 16px;
     font-size: 0.9em;
   }
@@ -106,7 +111,7 @@ button:hover {
     font-size: 0.8em;
   }
 
-  button {
+  .detailButton {
     padding: 6px 12px;
     font-size: 0.8em;
   }

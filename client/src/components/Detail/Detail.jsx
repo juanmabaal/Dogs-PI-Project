@@ -58,13 +58,13 @@ const Detail = () => {
                     onClick={handleImageModal}
                 />
             </div>
-            <p className={style.detailP}><span>Id:</span> {dogDetail?.id}</p>
-            <p className={style.detailP}><span>Weight:</span> {dogDetail?.weight}</p>
-            <p className={style.detailP}><span>Height:</span> {dogDetail?.height}</p>
-            <p className={style.detailP}><span>Life Span:</span> {dogDetail?.life_span}</p>
-            <p className={style.detailP}><span>Temperament:</span> {dogDetail?.temperament}</p>
+            <p className={style.detailP}><span>Id</span> : {dogDetail?.id}</p>
+            <p className={style.detailP}><span>Weight</span> : {dogDetail?.weight}</p>
+            <p className={style.detailP}><span>Height</span> : {dogDetail?.height}</p>
+            <p className={style.detailP}><span>Life Span</span> : {dogDetail?.life_span}</p>
+            <p className={style.detailP}><span>Temperament</span> : {dogDetail?.temperament}</p>
             <Link to='/home'>
-                <button>Home</button>
+                <button className={style.detailButton}>Home</button>
             </Link>
 
             {isModalOpen && (

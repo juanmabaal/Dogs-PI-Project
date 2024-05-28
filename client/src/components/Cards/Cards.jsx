@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 
 const Cards = () => {
     const dogs = useSelector((state) => state.dogsCopy);
-    console.log(dogs);
+    // console.log(dogs); //devuelve todas las razas de perros de la api
     return (
         <div className={style.cardsContainer}>
             {dogs?.map(({id, name, weight, height, life_span, temperament, image}) => (

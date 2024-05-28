@@ -23,7 +23,7 @@ const getDogById =  async (breedId) => {
 
 }
 
-// getDogById(222); //Esto deberia retornar la raza de perro con un id especifico
+//getDogById('222'); //Esto deberia retornar la raza de perro con un id especifico
 
 
 module.exports = {

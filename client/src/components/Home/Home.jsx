@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getDogs, getTemperaments } from '../../redux/actions/actions';
 import SearchBar from '../searchBar/SearchBar';
 import Cards from '../Cards/Cards';
+import LoadingSpinner from '../Loading/LoadingSpinner';
 import Pagination from './Pagination/Pagination';
 
 const Home = () => {
@@ -23,9 +24,11 @@ const Home = () => {
     useEffect(() => {
         const getAllDogs = async () => {
             setLoading(true);
-            dispatch(getDogs());
-            dispatch(getTemperaments());
-            setLoading(false);
+            await dispatch(getDogs());
+            await dispatch(getTemperaments());
+            setTimeout(() => {
+                setLoading(false);
+            }, 2000) //Simulo 2 segundos de espera mientras muestro la pagina de carga
         };
 
         getAllDogs();
@@ -40,8 +43,12 @@ const Home = () => {
     //Cambiar la pagina
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    // console.log(temperaments)
     // console.log(dogs); // Esto debería mostrar los datos obtenidos en la consola
+
+    if(loading) {
+        return <LoadingSpinner />
+    }
+
     return(
         <>
             <SearchBar />

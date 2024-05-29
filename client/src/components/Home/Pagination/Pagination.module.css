@@ -1,0 +1,65 @@
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .pageItem {
+    margin: 0 4px;
+  }
+  
+  .pageLink {
+    padding: 2px 6px; /* Reducido el padding para hacer los recuadros más pequeños */
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #ffd700;
+    color: #333333;
+    cursor: pointer;
+    font-size: 0.9em; /* Reducir tamaño de la fuente */
+  }
+  
+  .pageLink:hover {
+    background-color: #ffb6c1;
+  }
+  
+  .active {
+    background-color: #ff69b4;
+    color: white;
+    border-color: #ff69b4;
+  }
+  
+  /* Media Queries */
+  @media (min-width: 1201px) {
+    .pageLink {
+      padding: 4px 8px;
+      font-size: 0.8em;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .pageLink {
+      padding: 3px 6px;
+      font-size: 0.7em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .pageLink {
+      padding: 5px 8px;
+      font-size: 0.8em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .pageLink {
+      padding: 4px 6px;
+      font-size: 0.7em;
+    }
+  }
+  

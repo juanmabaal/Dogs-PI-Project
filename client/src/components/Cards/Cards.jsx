@@ -2,8 +2,8 @@ import { useSelector } from "react-redux";
 import style from './Cards.module.css';
 import Card from '../Card/Card';
 
-const Cards = () => {
-    const dogs = useSelector((state) => state.dogsCopy);
+const Cards = ({ dogs }) => {
+    // const dogs = useSelector((state) => state.dogsCopy);
     // console.log(dogs); //devuelve todas las razas de perros de la api
     return (
         <div className={style.cardsContainer}>

@@ -51,7 +51,7 @@ const Home = () => {
 
     return(
         <>
-            <SearchBar />
+            <SearchBar setCurrentPage={setCurrentPage}/>
             <h1>Home Page</h1>
             <Cards dogs = {currentDogs}/>
             <Pagination 

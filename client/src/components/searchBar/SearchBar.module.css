@@ -1,0 +1,110 @@
+.searchBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .searchForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .searchInput {
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    width: 300px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .searchButton, .backButton {
+    padding: 10px;
+    border: none;
+    background-color: #ffd700;
+    color: #333333;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    margin: 0 5px; /* Agrega margen a los botones */
+  }
+  
+  .searchButton:hover, .backButton:hover {
+    background-color: #ffb6c1;
+  }
+  
+  .searchButtonIcon, .backButtonIcon {
+    font-size: 1.2em;
+  }
+  
+  /* Media Queries */
+  @media (min-width: 1201px) {
+    .searchInput {
+      width: 400px;
+      padding: 12px 15px;
+    }
+  
+    .searchButton, .backButton {
+      padding: 12px 15px;
+    }
+  
+    .searchButtonIcon, .backButtonIcon {
+      font-size: 1.4em;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .searchInput {
+      width: 300px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+  
+    .searchButton, .backButton {
+      padding: 10px 12px;
+    }
+  
+    .searchButtonIcon, .backButtonIcon {
+      font-size: 1.2em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .searchInput {
+      width: 270px;
+      padding: 7px 9px;
+      text-align: left;
+      font-size: 12px;
+    }
+  
+    .searchButton, .backButton {
+      padding: 9px 11px;
+    }
+  
+    .searchButtonIcon, .backButtonIcon {
+      font-size: 1em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .searchInput {
+      width: auto; /* Ajusta el ancho al contenido */
+      flex: 1;
+      padding: 3px 5px;
+      text-align: left;
+      font-size: 12px;
+    }
+  
+    .searchButton, .backButton {
+      padding: 6px 8px;
+    }
+  
+    .searchButtonIcon, .backButtonIcon {
+      font-size: 0.8em;
+    }
+  }
+  

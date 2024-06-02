@@ -43,7 +43,7 @@ const Home = () => {
     //Cambiar la pagina
     const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-    // console.log(dogs); // Esto debería mostrar los datos obtenidos en la consola
+    console.log(dogs); // Esto debería mostrar los datos obtenidos en la consola
 
     if(loading) {
         return <LoadingSpinner />

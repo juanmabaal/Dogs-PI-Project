@@ -87,17 +87,19 @@ export const orderByWeight = (orderWeight) => {
     }) 
 };
 
-export const postDog = () => {
+export const postDog = (request) => {
     const endpoint = 'http://localhost:3001/dogs';
     return async (dispatch) => {
         try {
-            const { data } = await axios.post(endpoint);
-                alert("Creado con exito");
+            const { data } = await axios.post(endpoint, request);
+            
+            alert("Creado con exito");
             return dispatch ({
                 type: POST_DOG,
                 payload: data
             })
         } catch (error) {
+            console.error(error)
             return alert("No se pudo crear correctamente")
         }
     }

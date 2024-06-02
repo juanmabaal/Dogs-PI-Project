@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+.formContainer {
+  background-color: #ffd700; /* Amarillo */
+  border: 2px solid #98fb98; /* Verde Claro */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  max-width: 600px; /* Limita el ancho máximo */
+}
+
+.formTitle {
+  font-size: 2em;
+  font-weight: 700;
+  color: #333333; /* Gris Oscuro */
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+  text-align: left;
+  width: 100%;
+}
+
+.formGroup label {
+  font-weight: 700;
+  color: #333333; /* Gris Oscuro */
+}
+
+.formInput, .formSelect {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.radioGroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+.radioGroup label {
+  font-weight: 400;
+}
+
+.addButton {
+   /* Hacer el botón más pequeño */
+  margin-top: 5px;
+  background-color: #ffb6c1; /* Rosa Pastel */
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.addButton:hover {
+  background-color: #ff69b4; /* Rosa más oscuro */
+}
+
+.submitButton {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #ffb6c1; /* Rosa Pastel */
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submitButton:hover {
+  background-color: #ff69b4; /* Rosa más oscuro */
+}
+
+.backButton {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #ffd700; /* Amarillo */
+  color: #333333;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.backButton:hover {
+  background-color: #ff69b4; /* Rosa más oscuro */
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.previewImage {
+  margin-top: 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .formTitle {
+    font-size: 1.5em;
+  }
+
+  .formInput, .formSelect {
+    padding: 8px;
+  }
+
+  .addButton, .submitButton, .backButton {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    padding: 10px;
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  .formTitle {
+    font-size: 1.2em;
+  }
+
+  .formInput, .formSelect {
+    padding: 6px;
+  }
+
+  .addButton, .submitButton, .backButton {
+    padding: 6px 12px;
+    font-size: 0.8em;
+  }
+}
+
+@media (min-width: 1201px) {
+  .formTitle {
+    font-size: 2.5em;
+  }
+
+  .formInput, .formSelect {
+    padding: 12px;
+  }
+
+  .addButton, .submitButton, .backButton {
+    padding: 9px 21px;
+    font-size: 1.1em;
+  }
+}

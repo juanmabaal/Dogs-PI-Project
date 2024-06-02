@@ -54,7 +54,29 @@ const rootReducer = (state = initialState, action) => {
                 dogsCopy: dogByOrigin
             };
         }
-        //Aqui van los dos casos faltantes para el filtrado
+        
+
+        case ALPHABETIC_ORDER: {
+            const orderDogs = (action.payload === 'ascendent')
+            ? state.dogsCopy.sort((dog1, dog2) => dog1.name.localCompare(dog2.name))
+            : state.dogsCopy.sort((dog1, dog2) => dog2.name.localCompare(dog1.name));
+
+            return {
+                ...state,
+                dogsCopy: orderDogs
+            }
+        };
+
+        case ORDER_BY_WEIGHT: {
+            const orderWeight = (action.payload === 'lighter')
+            ? (state.dogsCopy.sort((dogA, dogB)=> dogA.weight.split("-")[0] - dogB.weight.split("-")[0]))
+            : (state.dogsCopy.sort((dogA, dogB)=> dogB.weight.split("-")[0] - dogA.weight.split("-")[0]))
+
+            return {
+                ...state,
+                dogsCopy: orderWeight
+            }
+        };
 
         case POST_DOG:
             return {

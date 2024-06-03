@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import validate from "./validate";
+import Navbar from "../Home/NavBar/NavBar";
 import { postDog, getTemperaments } from "../../redux/actions/actions";
 import style from './Form.module.css';
 
@@ -122,6 +123,8 @@ const Form = () => {
         
     };
      return (
+        <>
+        <Navbar/>
         <div className={style.formContainer}>
             <h2 className={style.formTitle}>Create a New Dog Breed</h2>
             <form onSubmit={handleSubmit} className={style.form}>
@@ -280,6 +283,7 @@ const Form = () => {
                 <button className={style.backButton}>Back Home</button>
             </Link>
         </div>
+        </>
     );
 };
 

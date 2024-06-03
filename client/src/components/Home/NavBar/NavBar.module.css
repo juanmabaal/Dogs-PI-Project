@@ -1,0 +1,58 @@
+.navbar {
+    background-color: #ffd700;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navItem {
+    margin: 0;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1em; /* Tamaño de fuente más pequeño */
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.navLink:hover {
+    color: #ff69b4;
+}
+
+/* Media Queries */
+@media (min-width: 1201px) {
+    .navLink {
+        font-size: 1em; /* Tamaño de fuente para pantallas grandes */
+    }
+}
+
+@media (max-width: 1200px) {
+    .navLink {
+        font-size: 0.9em; /* Tamaño de fuente para pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .navLink {
+        font-size: 0.8em; /* Tamaño de fuente para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .navLink {
+        font-size: 0.7em; /* Tamaño de fuente para pantallas extra pequeñas */
+    }
+}

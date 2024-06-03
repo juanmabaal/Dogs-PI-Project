@@ -58,8 +58,8 @@ const rootReducer = (state = initialState, action) => {
 
         case ALPHABETIC_ORDER: {
             const orderDogs = (action.payload === 'ascendent')
-            ? state.dogsCopy.sort((dog1, dog2) => dog1.name.localCompare(dog2.name))
-            : state.dogsCopy.sort((dog1, dog2) => dog2.name.localCompare(dog1.name));
+            ? state.dogsCopy.sort((dog1, dog2) => dog1.name.localeCompare(dog2.name))
+            : state.dogsCopy.sort((dog1, dog2) => dog2.name.localeCompare(dog1.name));
 
             return {
                 ...state,

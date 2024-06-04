@@ -1,0 +1,157 @@
+/* src/components/AboutMe/AboutMe.module.css */
+.background {
+    background-color: #ffffff; /* Fondo blanco */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .aboutMeContainer {
+    background-color: #ffd700; /* Amarillo */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333333;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 1em;
+    color: #333333;
+    margin-bottom: 20px;
+  }
+  
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .icon {
+    font-size: 2em;
+    color: #333333;
+    transition: color 0.3s;
+  }
+  
+  .icon:hover {
+    color: #ff69b4; /* Rosa más oscuro */
+  }
+  
+  .pawPrintTopLeft {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+  }
+  
+  .pawPrintBottomRight {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.5;
+  }
+  
+  @media (max-width: 1200px) {
+    .aboutMeContainer {
+      padding: 15px;
+    }
+  
+    .title {
+      font-size: 1.5em;
+    }
+  
+    .description {
+      font-size: 0.9em;
+    }
+  
+    .icon {
+      font-size: 1.5em;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .aboutMeContainer {
+      padding: 10px;
+    }
+  
+    .profileImage {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .title {
+      font-size: 1.2em;
+    }
+  
+    .description {
+      font-size: 0.8em;
+    }
+  
+    .icon {
+      font-size: 1.2em;
+    }
+  
+    .pawPrintTopLeft,
+    .pawPrintBottomRight {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .aboutMeContainer {
+      padding: 10px;
+      max-width: 90%;
+    }
+  
+    .profileImage {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .title {
+      font-size: 1em;
+    }
+  
+    .description {
+      font-size: 0.7em;
+    }
+  
+    .icon {
+      font-size: 1em;
+    }
+  
+    .pawPrintTopLeft,
+    .pawPrintBottomRight {
+      width: 30px;
+      height: 30px;
+    }
+  }
+  

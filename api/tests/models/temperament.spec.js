@@ -20,7 +20,7 @@ describe('Temperament model', () => {
             }
         });
 
-        it('should create a Temperament if name is provides', async() => {
+        it('should create a Temperament if name is provided', async() => {
 
                 const temperament = await Temperament.create({
                     name: 'Friendly'

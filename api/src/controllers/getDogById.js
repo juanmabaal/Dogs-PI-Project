@@ -15,12 +15,12 @@ const getDogById =  async (breedId) => {
              dogById = allDogs.find((dog) => dog.id === parseInt(breedId,10));
         };
 
-        // Verificar si se encontró el perro con el ID proporcionado
+        
         if (!dogById) {
             throw new Error(`No se encontró un perro con el ID ${breedId}.`);
         }
 
-        console.log(`breed ID: ${breedId}`); // Loguear el perro encontrado para depuración
+        // console.log(`breed ID: ${breedId}`); // Loguear el perro encontrado para depuración
 
         return dogById;
     } catch (error) {

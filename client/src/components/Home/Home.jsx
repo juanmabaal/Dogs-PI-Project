@@ -130,12 +130,14 @@ const Home = () => {
                 </div>
             )}
             <Cards dogs={currentDogs} className={style.cardsContainer} />
-            <Pagination
-                currentPage={currentPage}
-                totalPages={Math.ceil(dogs.length / dogsPerPage)}
-                onPageChange={paginate}
-                className={style.paginationContainer}
-            />
+            <div className={style.paginationContainer}>
+                <Pagination
+                    currentPage={currentPage}
+                    totalPages={Math.ceil(dogs.length / dogsPerPage)}
+                    onPageChange={paginate}
+                    
+                />
+            </div>
         </div>
     );
 };

@@ -10,21 +10,23 @@ const Pagination = ({currentPage, totalPages, onPageChange}) => {
     }
 
     return (
-        <nav className={style.paginationContainer}>
-            <ul className={style.pagination}>
+        <div className={style.container}>
+            <nav className={style.paginationContainer}>
+                <ul className={style.pagination}>
 
-                {pageNumbers.map ((number) => (
-                    <li key={number} className={style.pageItem}>
-                        <button
-                            onClick={() => onPageChange(number)}
-                            className={`${style.pageLink} ${number === currentPage ? style.active : ''}`}
-                        >
-                            {number}
-                        </button>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+                    {pageNumbers.map ((number) => (
+                        <li key={number} className={style.pageItem}>
+                            <button
+                                onClick={() => onPageChange(number)}
+                                className={`${style.pageLink} ${number === currentPage ? style.active : ''}`}
+                            >
+                                {number}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+            </div>
     )
 }
 

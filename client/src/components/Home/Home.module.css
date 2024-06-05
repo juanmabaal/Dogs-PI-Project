@@ -151,6 +151,12 @@
 
 .paginationContainer {
   margin-top: 20px;
+  position: sticky;
+  display: flex;
+  flex-direction:row;
+  top: 500px;
+  height: 100%;
+  z-index: 9;
 }
 
 .cardsContainer {

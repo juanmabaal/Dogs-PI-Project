@@ -16,7 +16,7 @@
   position: absolute;
   width: 60px; /* Tamaño más pequeño para más huellas */
   height: 60px;
-  background: url('./Image/pawPrint.png') no-repeat center center;
+  background: url('../../utils/Image/pawPrint.png') no-repeat center center;
   background-size: contain;
   opacity: 0.5;
   z-index: 0; /* Asegura que las huellas estén en el fondo */

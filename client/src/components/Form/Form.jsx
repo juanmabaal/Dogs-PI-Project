@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import validate from "./validate";
 import Navbar from "../Home/NavBar/NavBar";
+import generatePawPrints from "../../utils/generatePawPrints";
 import { postDog, getTemperaments } from "../../redux/actions/actions";
 import style from './Form.module.css';
 
@@ -122,8 +123,22 @@ const Form = () => {
         }
         
     };
+
+    const pawPrintsData = generatePawPrints(350);
+
      return (
-        <>
+        <div className={style.container}>
+        {pawPrintsData.map((position, index) => (
+                <div
+                    key={index}
+                    className={style.pawPrint}
+                    style={{
+                        top: `${position.top}%`,
+                        left: `${position.left}%`,
+                        position: 'absolute'
+                    }}
+                />
+            ))}
         <Navbar/>
         <div className={style.formContainer}>
             <h2 className={style.formTitle}>Create a New Dog Breed</h2>
@@ -283,7 +298,7 @@ const Form = () => {
                 <button className={style.backButton}>Back Home</button>
             </Link>
         </div>
-        </>
+        </div>
     );
 };
 

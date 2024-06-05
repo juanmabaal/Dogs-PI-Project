@@ -4,19 +4,33 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faWhatsapp, faGithub } from '@fortawesome/free-brands-svg-icons';
 import Navbar from '../Home/NavBar/NavBar';
 import style from './AboutMe.module.css';
+import generatePawPrints from "../../utils/generatePawPrints";
 import aboutMeImage from './aboutMeImage.jpg';
-import pawPrint from './pawPrint.png'; // Asegúrate de tener esta imagen en tu carpeta
 
 const AboutMe = () => {
+
+  const pawPrintsData = generatePawPrints(100);
   return (
-    <>
+    <div className={style.container}>
+       {pawPrintsData.map((position, index) => (
+                <div
+                    key={index}
+                    className={style.pawPrint}
+                    style={{
+                        top: `${position.top}%`,
+                        left: `${position.left}%`,
+                        position: 'absolute'
+                    }}
+                />
+            ))}
       <Navbar />
-      <div className={style.background}>
+      
         <div className={style.aboutMeContainer}>
           <img src={aboutMeImage} alt="Profile" className={style.profileImage} />
           <h2 className={style.title}>About Me</h2>
           <p className={style.description}>
-            Soy Juanma, un apasionado desarrollador con experiencia en ...
+          I am a dedicated and passionate individual who takes immense pride in my work. Perseverance is my driving force, and I am committed to seeing my goals through to completion. Currently, I am enrolled in a bootcamp, and this project represents a significant milestone in my journey as a developer. Through this project, I have had the opportunity to integrate and apply my knowledge in backend development, databases, and frontend design, showcasing a holistic approach to software development.
+
           </p>
           <div className={style.socialLinks}>
             <a href="https://www.linkedin.com/in/juan-manuel-balaguera-alvira/" target="_blank" rel="noopener noreferrer">
@@ -29,11 +43,10 @@ const AboutMe = () => {
               <FontAwesomeIcon icon={faGithub} className={style.icon} />
             </a>
           </div>
-        </div>
-        <img src={pawPrint} alt="Paw Print" className={style.pawPrintTopLeft} />
-        <img src={pawPrint} alt="Paw Print" className={style.pawPrintBottomRight} />
+        
+        
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,5 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.pawPrint {
+  position: absolute;
+  width: 50px; /* Tamaño más pequeño para más huellas */
+  height: 50px;
+  background: url('../../utils/Image/pawPrint.png') no-repeat center center;
+  background-size: contain;
+  opacity: 0.5;
+  z-index: 0; /* Asegura que las huellas estén en el fondo */
+}
+
 .formContainer {
   background-color: #ffd700; /* Amarillo */
   border: 2px solid #98fb98; /* Verde Claro */
@@ -11,6 +33,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
   max-width: 500px; /* Limita el ancho máximo */
+  z-index: 2;
 }
 
 .formTitle {
@@ -56,8 +79,8 @@
 }
 
 .addButton {
-   /* Hacer el botón más pequeño */
   margin-top: 5px;
+  padding: 5px 10px; /* Hacer el botón más pequeño */
   background-color: #ffb6c1; /* Rosa Pastel */
   color: #333333;
   border: none;
@@ -132,6 +155,11 @@
     padding: 8px 16px;
     font-size: 0.9em;
   }
+
+  .pawPrint {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -153,6 +181,11 @@
     padding: 6px 12px;
     font-size: 0.8em;
   }
+
+  .pawPrint {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media (min-width: 1201px) {
@@ -167,5 +200,10 @@
   .addButton, .submitButton, .backButton {
     padding: 9px 21px;
     font-size: 1.1em;
+  }
+
+  .pawPrint {
+    width: 50px;
+    height: 50px;
   }
 }

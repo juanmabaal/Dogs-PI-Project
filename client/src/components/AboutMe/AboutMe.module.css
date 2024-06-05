@@ -1,12 +1,25 @@
 /* src/components/AboutMe/AboutMe.module.css */
-.background {
-    background-color: #ffffff; /* Fondo blanco */
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+
+  .container {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+  .pawPrint {
+    position: absolute;
+    width: 50px; /* Tamaño más pequeño para más huellas */
+    height: 50px;
+    background: url('../../utils/Image/pawPrint.png') no-repeat center center;
+    background-size: contain;
+    opacity: 0.5;
+    z-index: 0; /* Asegura que las huellas estén en el fondo */
   }
   
   .aboutMeContainer {
@@ -20,6 +33,7 @@
     text-align: center;
     position: relative;
     overflow: hidden;
+    margin-top: 40px;
   }
   
   .profileImage {
@@ -39,9 +53,14 @@
   }
   
   .description {
-    font-size: 1em;
+    font-size: 1.1em; 
     color: #333333;
-    margin-bottom: 20px;
+    margin: 20px auto; 
+    text-align: justify; 
+    max-width: 800px; 
+    line-height: 1.6; 
+    padding: 0 20px;
+    font-size: 1em;
   }
   
   .socialLinks {

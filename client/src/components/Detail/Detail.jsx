@@ -11,6 +11,7 @@ const Detail = () => {
     const [loading, setLoading]= useState(false);
     const [error, setError] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
+   
 
     useEffect(() => {
         const fetchDog = async () => {

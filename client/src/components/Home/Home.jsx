@@ -8,6 +8,7 @@ import LoadingSpinner from '../Loading/LoadingSpinner';
 import Navbar from './NavBar/NavBar';
 import Pagination from './Pagination/Pagination';
 import style from './Home.module.css';
+import generatePawPrints from '../../utils/generatePawPrints';
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -78,12 +79,54 @@ const Home = () => {
         setShowFilters(!showFilters);
     };
 
+    // const generatePawPrints = (count) => {
+    //     const pawPrints = [];
+    //     const gridSize = Math.ceil(Math.sqrt(count));
+    //     const cellSize = 100 / gridSize;
+    //     const margin = cellSize * 0.3; // Margen de seguridad para evitar superposición
+    
+    //     for (let i = 0; i < count; i++) {
+    //         const row = Math.floor(i / gridSize);
+    //         const col = i % gridSize;
+    
+    //         // Centro de la celda con variación dentro del margen
+    //         const top = row * cellSize + (cellSize / 2) + (Math.random() * margin - margin / 2);
+    //         const left = col * cellSize + (cellSize / 2) + (Math.random() * margin - margin / 2);
+    
+    //         pawPrints.push(
+    //             <div
+    //                 key={i}
+    //                 className={style.pawPrint}
+    //                 style={{
+    //                     top: `${top}%`,
+    //                     left: `${left}%`,
+    //                 }}
+    //             />
+    //         );
+    //     }
+    
+    //     return pawPrints;
+    // }
+
+    const pawPrintsData = generatePawPrints(200);
+
     if(loading) {
         return <LoadingSpinner />
     }
 
     return (
         <div className={style.homeContainer}>
+             {pawPrintsData.map((position, index) => (
+                <div
+                    key={index}
+                    className={style.pawPrint}
+                    style={{
+                        top: `${position.top}%`,
+                        left: `${position.left}%`,
+                        position: 'absolute'
+                    }}
+                />
+            ))}
             <Navbar />
             <SearchBar setCurrentPage={setCurrentPage} className={style.searchBar} />
             <button onClick={toggleFilters} className={style.toggleFiltersButton}>

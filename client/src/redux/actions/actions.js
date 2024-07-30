@@ -10,8 +10,12 @@ import {
     POST_DOG
 } from './actions-type';
 
+const URL = 'dogs-pi-project-dqbivxine-juan-balagueras-projects.vercel.app';
+
+// const URL: 'http://localhost:3001';
+
 export const getDogs = () => {
-    const endpoint = `http://localhost:3001/dogs`;
+    const endpoint = `${URL}/dogs`;
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -27,7 +31,7 @@ export const getDogs = () => {
 };
 
 export const getDogByName = (name) => {
-    const endpoint = `http://localhost:3001/name?name=${name}`;
+    const endpoint = `${URL}/name?name=${name}`;
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -44,7 +48,7 @@ export const getDogByName = (name) => {
 };
 
 export const getTemperaments = () => {
-    const endpoint = `http://localhost:3001/temperaments`;
+    const endpoint = `${URL}/temperaments`;
     return async (dispatch) => {
         try {
             const { data } = await axios.get(endpoint);
@@ -88,7 +92,7 @@ export const orderByWeight = (orderWeight) => {
 };
 
 export const postDog = (request) => {
-    const endpoint = 'http://localhost:3001/dogs';
+    const endpoint = '${URL}/dogs';
     return async (dispatch) => {
         try {
             const { data } = await axios.post(endpoint, request);
